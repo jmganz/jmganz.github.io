@@ -63,12 +63,6 @@ a:hover
 { text-decoration: underline;
 }
 
-outline {
-    color: white;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    text-shadow: -2px -1 black, 0 2px black, 2px 0 black, 0 -2px black;
-}
-
 ul
 { margin: 2px 0 22px 30px;
   line-height: 1.7em;
@@ -402,5 +396,7 @@ ul img {
 #slideshow-caption p {
   padding: 0;
   font: normal 130% georgia, sans-serif;
-  color: #DD0000;
+  color: #CCCCCC;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-shadow: -2px -1 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
