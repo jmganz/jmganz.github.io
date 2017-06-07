@@ -380,7 +380,7 @@ ul img {
 
 #slideshow-caption {
   width: 600px;
-  height: 210px;
+  height: 310px;
   text-align: left;
   position: absolute;
   bottom: 0;
@@ -389,7 +389,7 @@ ul img {
 }
 
 #slideshow-caption .slideshow-caption-container {
-  padding: -20px -20px 0 -15px; 
+  padding: -20px -20px 0 -15px;
   z-index: 1000;
 }
 
