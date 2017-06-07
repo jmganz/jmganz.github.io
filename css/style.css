@@ -395,19 +395,15 @@ ul img {
 
 #slideshow-caption p {
   padding: 0;
-  font: normal 140% georgia, sans-serif;
+  font: bold 140% georgia, sans-serif;
   color: #CC2200;
   text-shadow:
-    -3px -3px 1px #0022BB,
-    3px -3px 1px #0022BB,
-    -3px 3px 1px #0022BB,
-    3px 3px 1px #0022BB,
-    -3px -3px 2px #0022BB,
-    3px -3px 2px #0022BB,
-    -3px 3px 2px #0022BB,
-    3px 3px 2px #0022BB,
-    -3px -3px 3px #0022BB,
-    3px -3px 3px #0022BB,
-    -3px 3px 3px #0022BB,
-    3px 3px 3px #0022BB;
+    -2px -2px 1px #0022BB,
+    2px -2px 1px #0022BB,
+    -2px 2px 1px #0022BB,
+    2px 2px 1px #0022BB,
+    -2px -2px 2px #0022BB,
+    2px -2px 2px #0022BB,
+    -2px 2px 2px #0022BB,
+    2px 2px 2px #0022BB;
 }
