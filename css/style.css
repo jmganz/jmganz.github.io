@@ -397,5 +397,17 @@ ul img {
   padding: 0;
   font: normal 140% georgia, sans-serif;
   color: #CC2200;
-  text-shadow: -2px 0 #00FFEE, 0 2px #00FFEE, 2px 0 #00FFEE, 0 -2px #00FFEE;
+  text-shadow:
+    -3px -3px 1px #0022BB,
+    3px -3px 1px #0022BB,
+    -3px 3px 1px #0022BB,
+    3px 3px 1px #0022BB,
+    -3px -3px 2px #0022BB,
+    3px -3px 2px #0022BB,
+    -3px 3px 2px #0022BB,
+    3px 3px 2px #0022BB,
+    -3px -3px 3px #0022BB,
+    3px -3px 3px #0022BB,
+    -3px 3px 3px #0022BB,
+    3px 3px 3px #0022BB;
 }
