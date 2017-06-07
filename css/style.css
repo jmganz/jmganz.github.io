@@ -396,6 +396,6 @@ ul img {
 #slideshow-caption p {
   padding: 0;
   font: normal 140% georgia, sans-serif;
-  color: #333333;
-  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  color: #CC2200;
+  text-shadow: -2px 0 #00FFEE, 0 2px #00FFEE, 2px 0 #00FFEE, 0 -2px #00FFEE;
 }
