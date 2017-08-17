@@ -293,9 +293,12 @@ section h3.section-subheading {
   font-weight: 400;
   margin-bottom: 75px;
 }
+section h3.section-space {
+  margin-top: 50px;
+}
 @media (min-width: 768px) {
   section {
-    padding: 150px 0;
+    padding: 80px 0;
   }
 }
 .service-heading {
@@ -553,6 +556,11 @@ section h3.section-subheading {
 aside.clients img {
   margin: 50px auto;
 }
+
+section#contact .center {
+  margin: auto;
+  width: 100%;
+}
 section#contact {
   background-color: #222222;
   background-image: url('../img/map-image.png');
@@ -573,7 +581,7 @@ section#contact .form-group input.form-control {
   height: auto;
 }
 section#contact .form-group textarea.form-control {
-  height: 236px;
+  height: 150px;
 }
 section#contact .form-control:focus {
   border-color: #009999;
@@ -583,7 +591,7 @@ section#contact ::-webkit-input-placeholder {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
-  color: #eeeeee;
+  color: #999999;
 }
 section#contact :-moz-placeholder {
   /* Firefox 18- */
