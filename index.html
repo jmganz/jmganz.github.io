@@ -30,7 +30,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.js" integrity="sha384-ZoaMbDF+4LeFxg6WdScQ9nnR1QC2MIRxA1O9KWEXQwns1G8UNyIEZIQidzb0T1fo" crossorigin="anonymous"></script>
     <![endif]-->
     <script type="text/javascript">var submitted=false;</script>
-    <link rel='icon' type='image/png' href='http://www.jonganz.com/favicon.ico'>
+    <link rel='icon' type='image/png' href='http://www.jonganz.com/favicon.png'>
 </head>
 
 <body id="page-top" class="index">
@@ -144,6 +144,20 @@
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 portfolio-item">
+                    <a href="#Scantegrity" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/ballot.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Electronic Voting Security</h4>
+                        <p class="text-muted">Security Evaluation of Scantegrity II</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 portfolio-item">
                     <a href="#Retransmits" class="portfolio-link" data-toggle="modal">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
@@ -183,20 +197,6 @@
                     <div class="portfolio-caption">
                         <h4>Malicious Media Sanitization</h4>
                         <p class="text-muted">Removing Steganographic Content</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 portfolio-item">
-                    <a href="#Scantegrity" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/ballot.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Electronic Voting Security</h4>
-                        <p class="text-muted">Security Evaluation of Scantegrity II</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 portfolio-item">
@@ -448,10 +448,52 @@
                                 <!-- Project Details Go Here -->
                                 <h2>Control-Flow Integrity</h2>
                                 <p class="item-intro text-muted">Entropy Analysis of Different Address Space Layout Randomization Implementations</p>
-                                <!-- <img class="img-responsive img-centered" src="img/portfolio/roundicons-free.png" alt=""> -->
-                                <p>Experimental details to come!</p>
-                                <p>
-                                    <strong></strong></a></p>
+                                <p align="justify">In this experiment, I examine the security provided by different implementations of Address Space Layout
+                                   Randomization (ASLR). ASLR is a security mechanism that increases control-flow integrity by making it more difficult for
+                                   an attacker to properly execute a buffer-overflow attack, even in systems with vulnerable software. The strength of ASLR
+                                   lies in the randomness of the offsets it produces in memory layouts. I compare multiple operating systems by measuring
+                                   the amount of entropy provided to a vulnerable application. This project is the first of its kind to quantitatively
+                                   compare the entropy of different ASLR implementations. In performing this experiment, I also provide a method for
+                                   remotely assessing the efficacy of a particular security feature on systems that are otherwise unavailable for analysis.
+                                   The results obtained highlight the need for independent evaluation of security mechanisms.</p>
+                                <img class="img-responsive img-centered" src="img/portfolio/bufferOverflow.png">
+                                <p>Figure 1. Stack Layout of a Program Vulnerable to Buffer Overflows</p>
+                                <p align="justify">As we can see in Figure 1, a buffer overflow (illustrated by the figure on the right) can wreak havok on
+                                   the proper execution of targeted applications. When a vulnerable function is exploited in the way shown above, with an
+                                   excessive amount of input, it will generally cause the program to crash. The return address stored in the extended
+                                   instruction pointer (register EIP) is overwritten with a value (in the above case, "AAAA" = 0x41414141) that will not
+                                   dereference to a valid location. But the main goal of a buffer overflow attack is to redirect the control-flow of the
+                                   target executable, a task that requires more precision.
+                                </p>
+                                <img class="img-responsive img-centered" src="img/portfolio/goldilocks.png">
+                                <p>Figure 2. Successful Buffer Overflow Attacks Require an Attack String that's Just Right</p>
+                                <p align="justify">Figure 2 symbolizes the three possible outcomes of an attempted buffer overflow attack. Too hot and the
+                                   program crashes. Too cold and the program executes nominally, with no unintended effects. When an attacker crafts an
+                                   attack string with just the right number of characters to overwrite the return address, and overwrites that return
+                                   address with just the right value, the attack will successfully hijack the program's control-flow.
+                                </p>
+                                <p align="justify">There are several ways to defend against buffer overflow attacks. One way is to ensure that any
+                                   applications used are written in memory-safe languages, avoiding programs written in C. This can greatly limit the
+                                   software that can be run. Another option is to properly check the bounds on all dynamic input to prevent it from writing
+                                   passed the memory buffer allocated for it. Static analysis of the source code can easily identify flaws regarding the
+                                   lack of stringent bounds-checking, but fixing these flaws requires availability of the source code for all (memory-unsafe)
+                                   software that is run.
+                                </p>
+                                <p align="justify">Instead of attempting to secure all applications against buffer overflow attacks, one can add a now common
+                                   security feature to the system's operating system, making it harder for an attacker to successfully execute a buffer
+                                   overflow attack. Address Space Layout Randomization (ASLR) adds random offsets in the memory layout of applications that
+                                   are compiled with support for position-independent execution. The values of these random offsets are determined at runtime,
+                                   so if the daemonization of services is configured properly, an attack that crashes the vulnerable program will gain no
+                                   knowledge of how to effectively hijack its control flow.
+                                </p>
+                                <p align="justify">Address Space Layout Ranomization does not prevent buffer overflows. It does not patch vulnerable programs.
+                                   But it does make it harder for attackers to successfully exploit those vulnerabilities. The key to ASLR's effectiveness is
+                                   in the randomness of the offsets added to memory layouts. If these offsets are predictable, then a buffer overflow attack
+                                   would be only marginally more difficult, and take possibly only slightly more time to execute, on a system with ASLR, as
+                                   compared to a system without such a security feature.
+                                </p>
+                                <img class="img-responsive img-centered" src="img/portfolio/overflowAttack.png">
+                                <p>Figure 3. Diagram of Attack Technique</p>
                                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                             </div>
                         </div>
@@ -590,7 +632,7 @@
                                 <h2>My Next Project</h2>
                                 <p class="item-intro text-muted">Whatever Piques My Interest</p>
                                 <img class="img-responsive img-centered" src="img/portfolio/construction.gif" alt="">
-                                <p>I haven't decided yet</p>
+                                <p></p>
                                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                             </div>
                         </div>
