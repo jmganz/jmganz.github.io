@@ -1,2 +1,2 @@
-var cf-app = document.getElementsByTagName("cloudflare-app");
-cf-app[0].innerHTML += "Brought to you by junnie";
+var cf-app = document.getElementsByTagName("header")[0];
+cf-app.innerHTML += "Brought to you by junnie";
