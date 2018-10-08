@@ -1,1 +1,2 @@
-document.body.masthead.innerHTML += "Brought to you by junnie";
+var header = document.getElementsByClassName("masthead");
+header.innerHTML += "Brought to you by junnie";
